@@ -450,9 +450,10 @@
           });
         });
         let result = document.getElementById('balance').textContent;
-                if (result != 0) {
+               
                   const claim_btn = document.getElementById("claim");
                   claim_btn.style.display = "block";
+
                   try {
                     claim_btn.onclick = async function claim() {
                       if(type=="anchor")
@@ -486,13 +487,11 @@
                       get_balance(anchorAccount).then(result => {
                         document.getElementById('balance').textContent = result;
                       });
-                      result = "0 HEL";
                     }
                   } catch (e) {
                     alert(e.message);
                   }
                 }
-      }
 
       async function get_level(templateID) {
         let response1 = await wax.rpc.get_table_rows({
